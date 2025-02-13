@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+  max-width: 1920px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: #e9f6ff;
+  /* background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%); */
+}
+
+.text-primary{
+  color: #4e42f9;
+}
+
+.bg-primary{
+  background: #4e42f9;
+}
