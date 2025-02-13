@@ -3,7 +3,7 @@ import ChatGPTUI from '../components/ChatGPTUI'
 
 export const Dashboard = () => {
   return (
-    <>
+    <>  
         <ChatGPTUI />
     </>
   )

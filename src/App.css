@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,6 +9,8 @@
   margin: 0 auto;
   min-height: 100vh;
   background: #e9f6ff;
+  font-family: "Play", serif;
+  font-weight: 400;
   /* background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%); */
 }
 
@@ -16,4 +20,40 @@
 
 .bg-primary{
   background: #4e42f9;
+}
+
+/* editor */
+
+.ql-toolbar.ql-snow, .ql-container.ql-snow{
+  border: none !important;
+}
+
+.ql-toolbar.ql-snow{
+  height: 0;
+  padding: 0;
+}
+
+/* For Webkit Browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: #cedcff ;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #202020 ;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #000000 ;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
 }

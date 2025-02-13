@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { FiCopy, FiEdit2, FiSend, FiVolume2 } from "react-icons/fi";
 import { BsRobot, BsPerson } from "react-icons/bs";
+import QuillEditor from "./QuillEditor";
 
 const ChatGPTUI = () => {
     const [chatHistory, setChatHistory] = useState([]);
     const [message, setMessage] = useState("");
+
 
     const handleSendMessage = () => {
         if (message.trim()) {
@@ -15,7 +17,10 @@ const ChatGPTUI = () => {
             setTimeout(() => {
                 setChatHistory((prev) => [
                     ...prev,
-                    { role: "bot", content: "The issue of messages being added twice in your ChatGPTUI component occurs because you're appending both the user's message and the bot's response in one go, and the user's message is being added twice.!" },
+                    {   role: "bot", 
+                        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+                        richText: "<h1> Lorem ipsum dolor sit amet <h1> <br /> <small> consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </small>",
+                    },
                 ]);
             }, 500); // Adding a slight delay for bot response for realism
 
@@ -46,7 +51,18 @@ const ChatGPTUI = () => {
                                 } px-4 py-2 rounded-lg max-w-xl`}
                         >
                             {chat.content}
-                            {chat.type === "rich-text"}
+                            {
+                                chat.richText &&
+                                <div 
+                                    className="border mt-5 bg-white rounded max-h-[300px] overflow-auto"
+                                    // className="border mt-5 bg-white rounded absolute mx-10 my-5 left-0 top-0 overflow-auto h-[96%]"
+                                >
+                                    <QuillEditor
+                                        value={chat.richText}
+                                    />
+                                </div>
+                            }
+                            { chat.role === "bot" &&
                             <div className="flex mt-3 gap-3">
                                 <button
                                     onClick={() => handleSpeak(chat.content)}
@@ -70,6 +86,7 @@ const ChatGPTUI = () => {
                                     <FiCopy />
                                 </button>
                             </div>
+                            }
                         </div>
 
                         {chat.role === "user" && (

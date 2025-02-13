@@ -24,7 +24,7 @@ export const LoginPage = () => {
       const isAuthenticated = await login(email, password);
       console.log("success", isAuthenticated);
       if (isAuthenticated) {
-        navigate('/dashboard'); 
+        navigate('/'); 
       } else {
         setError('Invalid email or password');
         // startRetryTimer();
