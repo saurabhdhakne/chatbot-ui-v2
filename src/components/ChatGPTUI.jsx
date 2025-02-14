@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FiCopy, FiEdit2, FiSend, FiVolume2 } from "react-icons/fi";
 import { BsRobot, BsPerson } from "react-icons/bs";
 import QuillEditor from "./QuillEditor";
+import { FaArrowAltCircleUp, FaArrowUp } from "react-icons/fa";
 
 const ChatGPTUI = () => {
     const [chatHistory, setChatHistory] = useState([]);
@@ -30,7 +31,7 @@ const ChatGPTUI = () => {
 
 
     return (
-        <div className="flex flex-col h-screen max-w-4xl mx-auto">
+        <div className="flex flex-col h-full max-w-4xl mx-auto">
             {/* Chat history */}
             <div className="flex-1 overflow-y-auto p-4">
                 {chatHistory.map((chat, index) => (
@@ -55,7 +56,7 @@ const ChatGPTUI = () => {
                                 chat.richText &&
                                 <div 
                                     className="border mt-5 bg-white rounded max-h-[300px] overflow-auto"
-                                    // className="border mt-5 bg-white rounded absolute mx-10 my-5 left-0 top-0 overflow-auto h-[96%]"
+                                    // className="border mt-5 bg-white rounded absolute w-[40%] h-[95%] mx-5 my-5 right-0 top-0 overflow-auto z-50"
                                 >
                                     <QuillEditor
                                         value={chat.richText}
@@ -100,21 +101,24 @@ const ChatGPTUI = () => {
 
             {/* Input area */}
             <div className="p-4">
-                <div className="flex items-center">
-                    <input
-                        type="text"
-                        value={message}
-                        onChange={(e) => setMessage(e.target.value)}
-                        placeholder="Type your message..."
-                        className="flex-1 border border-gray-300 rounded-lg p-2 mr-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        onKeyDown={(e) => e.key === "Enter" && handleSendMessage()}
-                    />
-                    <button
-                        onClick={handleSendMessage}
-                        className="bg-blue-500 text-white p-2 rounded-lg hover:bg-blue-600"
-                    >
-                        <FiSend className="w-5 h-5" />
-                    </button>
+                <div className="flex flex-col content-start items-center border p-3 rounded-xl">
+                    <div className="flex w-full">
+                        <input
+                            type="text"
+                            value={message}
+                            onChange={(e) => setMessage(e.target.value)}
+                            placeholder="Type your message..."
+                            className="flex-1 border border-none rounded-lg p-2 mr-2 focus:outline-none"
+                            onKeyDown={(e) => e.key === "Enter" && handleSendMessage()}
+                        />
+                        <button
+                            onClick={handleSendMessage}
+                            className=" text-primary p-2 rounded-lg"
+                        >
+                            <FaArrowAltCircleUp className="w-5 h-5" />
+                        </button>
+                    </div>
+                 
                 </div>
             </div>
         </div>

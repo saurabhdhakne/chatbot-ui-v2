@@ -8,19 +8,29 @@
   max-width: 1920px;
   margin: 0 auto;
   min-height: 100vh;
-  background: #e9f6ff;
+  /* background: #e9f6ff; */
+  background: #131C2E;
   font-family: "Play", serif;
   font-weight: 400;
   /* background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%); */
 }
 
 .text-primary{
-  color: #4e42f9;
+  color: #131C2E;
 }
 
 .bg-primary{
-  background: #4e42f9;
+  background: #131C2E;
 }
+
+.text-secondary{
+  color: #253355;
+}
+
+.bg-secondary{
+  background: #253355;
+}
+
 
 /* editor */
 

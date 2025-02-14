@@ -1,11 +1,11 @@
 import React from 'react'
 import { RiChatAiFill } from 'react-icons/ri'
 
-const CustomLogo = () => {
+const CustomLogo = ({mode}) => {
   return (
-    <span className="text-primary flex content-center text-2xl font-bold">
+    <span className={`${mode === 'dark'?'text-white':'text-primary' } flex gap-2 items-center text-2xl font-bold`}>
       <RiChatAiFill />
-      ChatBot
+      MIS-Chat
     </span>
   )
 }

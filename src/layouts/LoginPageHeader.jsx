@@ -11,7 +11,7 @@ const LoginPageHeader = () => {
       <div className="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
         <div className="flex items-center justify-between">
           <Link to="/">
-            <CustomLogo />
+            <CustomLogo mode={'dark'} />
           </Link>
         </div>
 
@@ -24,7 +24,7 @@ const LoginPageHeader = () => {
      
           <div className="flex justify-center md:block">
             <a
-              className="relative text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300"
+              className="relative text-white transition-colors duration-300 transform dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300"
               href="#"
             >   
               <FiRefreshCcw />
